@@ -569,7 +569,7 @@ print("After OverSampling, counts of non-default: {}".format(sum(y_train_sm==0))
 # In[32]:
 
 
-#3.7 Dimentionality reduction stratgey for feature selection
+#3.7 Dimensionality reduction strategy for feature selection
 def apply_PCA(X_train, X_test, COMPONENTS=10):
 
     # Tranform X train, X test
