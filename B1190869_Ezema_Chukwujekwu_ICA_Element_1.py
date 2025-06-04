@@ -760,7 +760,7 @@ def predict_model(classifier, X_test, y_test):
     cf_matrix = confusion_matrix(y_test, y_pred, labels=[1,0])
     ax =sns.heatmap(cf_matrix, annot=True, fmt="d", cmap="Blues",
                 xticklabels=['Default', 'Not Default'],
-                yticklabels=['Default', 'NOt Default'])
+                yticklabels=['Default', 'Not Default'])
     ax.set(xlabel="Predicted outputs", ylabel = "Actual outputs")
     plt.show()
 
@@ -919,7 +919,7 @@ def ANN_model(X_train, y_train, X_test, y_test, epochs=5):
     cf_matrix = confusion_matrix(y_test, y_pred, labels=[1,0])
     ax =sns.heatmap(cf_matrix, annot=True, fmt="d", cmap="Blues",
                 xticklabels=['Default', 'Not Default'],
-                yticklabels=['Default', 'NOt Default'])
+                yticklabels=['Default', 'Not Default'])
     ax.set(xlabel="Predicted outputs", ylabel = "Actual outputs")
     plt.show()
 
