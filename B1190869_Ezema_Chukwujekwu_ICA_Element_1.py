@@ -711,11 +711,18 @@ def model_best_estimator(X_train, y_train, class_weight=None, random_state=rando
     
     # XGBoost Classifier
     t8 = time.time()
-    XGB_params_grid = {"criterion": ["gini", "entropy"], "max_depth": list(range(2,6,1)),
-                "min_samples_leaf": list(range(2,7,1))}
+    # Parameters supported by XGBClassifier
+    XGB_params_grid = {
+        "n_estimators": [100, 200],
+        "max_depth": list(range(3, 6, 1)),
+        "learning_rate": [0.01, 0.1]
+    }
 
-    grid_XGB = GridSearchCV(XGBClassifier(random_state=random_state, class_weight=class_weight), 
-                           XGB_params_grid, cv=cv)
+    grid_XGB = GridSearchCV(
+        XGBClassifier(random_state=random_state, class_weight=class_weight),
+        XGB_params_grid,
+        cv=cv,
+    )
     grid_XGB.fit(X_train, y_train)
 
     # random forest best estimator
